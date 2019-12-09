@@ -1,3 +1,17 @@
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://eracom-id471.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/projet-3-simonpinkas" # the subpath of your site, e.g. /blog
 title: "The Podcast Times"
+
+navigation: 
+  - title: Audio
+    url: audio.html
+  - title: Video
+    url: video.html
+  - title: Politics
+    url: politics.html
+  - title: Comedy
+    url: comedy.html
+  - title: Sports
+    url: sports.html
+  - title: Culture
+    url: culture.html
