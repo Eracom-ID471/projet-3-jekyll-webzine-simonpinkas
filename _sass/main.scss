@@ -1,5 +1,5 @@
 $backgroundColor: #ffffff;
-$bodyColor: #000000;
+$bodyColor: #343a40;
 $bodyFont: mauritius,
 serif;
 $headingFont: trumpgothicpro,
@@ -21,11 +21,33 @@ h5 {
 
 .blog-header {
   border-bottom: 1px solid #e5e5e5;
+
   &-logo {
     font-family: $headingFont;
     font-weight: 600;
     text-transform: uppercase;
     font-size: 3rem;
-    
+
+  }
+}
+
+.jumbotron {
+  >* {
+    transition: 0.3s all;
+  }
+  &:hover {
+    >* {
+      color: white;
+
+    }
+  }
+}
+.text-black {
+  color: $bodyColor;
+}
+
+.no-underline {
+  &:hover {
+    text-decoration: none;
   }
 }
