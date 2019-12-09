@@ -1,7 +1,16 @@
 <div class="row mb-2">
+  <!-- Faire une boucle avec tous les articles sur le site -->
   {% for post in site.posts %}
-  {% if post.title != page.jumbotron %}
-  {% if post.featured %}
+  <!-- Si un article est déjà présenté dans le "Jumbotron", 
+    ne pas l'afficher à nouveau dans les articles "featured" -->
+  {% if post.title != page.jumbotron && post.featured %}
+  <!-- Checker si une page à une catégorie associée -->
+  {% if page.category %}
+  <!-- Si c'est le cas, on ne veut que montrer les articles 
+    correspondant à cette catégorie, ainsi que les articles qui correspondent 
+    à toutes les catégories -->
+  {% if post.category == page.category or post.category contains "all" %}
+  <!-- On affiche le contenu -->
   <div class="col-md-6">
     <div class="card flex-md-row mb-4 box-shadow h-md-250">
       <div class="card-body d-flex flex-column align-items-start">
@@ -17,6 +26,27 @@
         src="{{post.image | relative_url}}" data-holder-rendered="true">
     </div>
   </div>
+  {% endif %}
+  <!-- Si la page n'a pas de catégorie associée (comme la homepage), on ne filtre pas -->
+  {% else %}
+  <!-- On affiche le contenu -->
+  <div class="col-md-6">
+    <div class="card flex-md-row mb-4 box-shadow h-md-250">
+      <div class="card-body d-flex flex-column align-items-start">
+        <strong class="d-inline-block mb-2 text-primary">{{post.category}}</strong>
+        <h3 class="mb-0">
+          <a class="text-dark" href="{{post.url | relative_url}}">{{post.title}}</a>
+        </h3>
+        <div class="mb-1 text-muted">{{post.date | date_to_long_string}}</div>
+        <p class="card-text mb-auto">{{post.subtitle}}</p>
+        <a href="#">Continue reading</a>
+      </div>
+      <img class="card-img-right flex-auto d-none d-md-block" data-src="{{post.image | relative_url}}"
+        src="{{post.image | relative_url}}" data-holder-rendered="true">
+    </div>
+  </div>
+
+
   {% endif %}
   {% endif %}
   {% endfor %}

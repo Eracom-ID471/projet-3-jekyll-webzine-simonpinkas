@@ -3,15 +3,11 @@ baseurl: "/projet-3-simonpinkas" # the subpath of your site, e.g. /blog
 title: "The Podcast Times"
 
 navigation: 
-  - title: Audio
-    url: audio.html
-  - title: Video
-    url: video.html
   - title: Politics
-    url: politics.html
+    url: /politics.html
   - title: Comedy
-    url: comedy.html
+    url: /comedy.html
   - title: Sports
-    url: sports.html
+    url: /sports.html
   - title: Culture
-    url: culture.html
+    url: /culture.html

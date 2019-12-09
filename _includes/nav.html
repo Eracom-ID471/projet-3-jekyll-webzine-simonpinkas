@@ -1,7 +1,12 @@
 <div class="nav-scroller py-1 mb-2">
   <nav class="nav d-flex justify-content-between">
     {% for nav-item in site.navigation %}
-      <a class="p-2 text-muted" href="{{ nav-item.url | relative_url }}">{{nav-item.title}}</a>
+    {% if page.url == nav-item.url %}
+
+      <a class="active p-2 text-black" href="{{ nav-item.url | relative_url }}">{{nav-item.title}}</a>
+    {% else %}
+      <a class="p-2 text-black" href="{{ nav-item.url | relative_url }}">{{nav-item.title}}</a>
+    {% endif %}
     {% endfor %}
   </nav>
 </div>

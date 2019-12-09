@@ -31,6 +31,12 @@ h5 {
   }
 }
 
+nav {
+  a.active {
+    text-decoration: underline;
+  }
+}
+
 .jumbotron {
   >* {
     transition: 0.3s all;
