@@ -8,10 +8,10 @@
     {% include nav.html %}
     {% for post in site.posts %}
     {% if post.title == page.jumbotron %}
-    <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
+    <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark" style="background-image: url('{{post.image | relative_url}}');">
       <div class="col-md-6 px0">
-        <h1 class="display-3 text-uppercase">{{post.title}}</h1>
-        <p class="lead my-3">
+        <h1 class="display-3 font-weight-bold text-uppercase ">{{post.title}}</h1>
+        <p class="font-weight-bold lead my-3">
           {{post.subtitle}}
         </p>
         <p class="lead mb-0">
