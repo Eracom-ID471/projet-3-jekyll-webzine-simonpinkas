@@ -1,6 +1,8 @@
 <div class="blog-post">
-  <a class="text-black font-weight-light" href="{{post.url | relative_url }}">
-    <h1 class="blog-post-title text-uppercase">{{ post.title }}</h1>
+  <a class="text-black" href="{{post.url | relative_url }}">
+    <h1 class="blog-post-title text-uppercase mb-0">{{ post.title }}</h1>
   </a>
-  <p class="blog-post-meta">{{post.date | date_to_long_string}}</p>
+  <p class="blog-post-meta text-muted">{{post.date | date_to_long_string s}}</p>
+  <p>{{ post.subtitle }}</p>
+  <hr>
 </div>
