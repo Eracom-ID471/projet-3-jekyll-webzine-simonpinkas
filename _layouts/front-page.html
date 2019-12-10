@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: "en-CH" }}">
+<html lang="{{ site.lang | default: "en-US" }}">
 {% include head.html %}
 
 <body>
@@ -9,6 +9,8 @@
     {% include jumbotron.html %}
     {% include featured.html %}
   </div>
+  <!-- On inclus généralement les fichiers JS en bas du Body -->
+  {% include scripts.html %}
 </body>
 
 </html>
