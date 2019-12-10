@@ -1,23 +1,23 @@
 <div class="row mb-2">
   <!-- Faire une boucle avec tous les articles sur le site -->
-  {% for post in site.posts limit:5 %}
+  {% for post in site.posts %}
   <!-- Si un article est déjà présenté dans le "Jumbotron", 
     ne pas l'afficher à nouveau dans les articles "featured" -->
-  {% if post.title != page.jumbotron && post.featured %}
+    {% if post.title != page.jumbotron and post.featured %}
   <!-- Checker si une page à une catégorie associée -->
-  {% if page.category %}
+      {% if page.category %}
   <!-- Si c'est le cas, on ne veut que montrer les articles 
     correspondant à cette catégorie, ainsi que les articles qui correspondent 
     à toutes les catégories -->
-  {% if post.category == page.category or post.category contains "All" %}
+        {% if post.category == page.category or post.category contains "All" %}
   <!-- On affiche le contenu -->
-    {% include featured-box.html %}
-  {% endif %}
+          {% include featured-item.html %}
+        {% endif %}
   <!-- Si la page n'a pas de catégorie associée (comme la homepage), on ne filtre pas -->
-  {% else %}
+      {% else %}
   <!-- On affiche le contenu -->
-    {% include featured-box.html %}
-  {% endif %}
-  {% endif %}
+        {% include featured-item.html %}
+      {% endif %}
+    {% endif %}
   {% endfor %}
 </div>

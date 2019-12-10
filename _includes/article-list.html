@@ -1,0 +1,11 @@
+{% for post in site.posts %}
+{% unless post.featured %}
+  {% if page.category %}
+    {% if post.category == page.category or post.category contains "All" %}
+      {% include article-list-item.html %}
+    {% endif %}
+  {% else %}
+    {% include article-list-item.html %}
+  {% endif %}
+{% endunless %}
+{% endfor %}
