@@ -5,25 +5,34 @@
     </div>
     <div class="col-4 d-flex justify-content-end align-items-center">
       <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal"
-      data-target="#exampleModalCenter">Contribute</button>
+        data-target="#contribute-modal">Contribute</button>
     </div>
   </div>
 </header>
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="contribute-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+        <h3 class="modal-title text-uppercase">Something we should look into?</h3>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+
+        <form action="https://formspree.io/mvogyoea" method="POST">
+          <div class="form-group">
+            <label for="contribute-form-email">Email address:</label>
+            <input type="email" class="form-control" name="_replyto" id="contribute-form-email">
+          </div>
+          <div class="form-group">
+            <label for="contribute-form-message">Your message:</label>
+            <textarea class="form-control" name="message" id="contribute-form-message" rows="3"></textarea>
+          </div>
+          <!-- your other form fields go here -->
+          <button type="submit" class="btn btn-primary">Send</button>
+        </form>
       </div>
     </div>
   </div>
