@@ -1,6 +1,6 @@
 <div class="row mb-2">
   <!-- Faire une boucle avec tous les articles sur le site -->
-  {% for post in site.posts %}
+  {% for post in site.posts limit:5 %}
   <!-- Si un article est déjà présenté dans le "Jumbotron", 
     ne pas l'afficher à nouveau dans les articles "featured" -->
   {% if post.title != page.jumbotron && post.featured %}
@@ -16,7 +16,7 @@
       <div class="card-body d-flex flex-column align-items-start">
         <strong class="d-inline-block mb-2 text-primary">{{post.category}}</strong>
         <h3 class="mb-0">
-          <a class="text-dark" href="{{post.url | relative_url}}">{{post.title}}</a>
+          <a class="text-dark font-weight-bold text-uppercase" href="{{post.url | relative_url}}">{{post.title}}</a>
         </h3>
         <div class="mb-1 text-muted">{{post.date | date_to_long_string}}</div>
         <p class="card-text mb-auto">{{post.subtitle}}</p>
@@ -35,7 +35,7 @@
       <div class="card-body d-flex flex-column align-items-start">
         <strong class="d-inline-block mb-2 text-primary">{{post.category}}</strong>
         <h3 class="mb-0">
-          <a class="text-dark" href="{{post.url | relative_url}}">{{post.title}}</a>
+          <a class="text-dark font-weight-bold text-uppercase" href="{{post.url | relative_url}}">{{post.title}}</a>
         </h3>
         <div class="mb-1 text-muted">{{post.date | date_to_long_string}}</div>
         <p class="card-text mb-auto">{{post.subtitle}}</p>
@@ -45,8 +45,6 @@
         src="{{post.image | relative_url}}" data-holder-rendered="true">
     </div>
   </div>
-
-
   {% endif %}
   {% endif %}
   {% endfor %}
