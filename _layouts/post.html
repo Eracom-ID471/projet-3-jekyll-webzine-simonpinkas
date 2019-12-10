@@ -6,8 +6,15 @@
   <div class="container">
     {% include header.html %}
     {% include nav.html %}
+    <div class="post-image mb-3">
+        <img src="{{ page.image | relative_url }}"> 
+    </div>
     <h1 class="text-black text-uppercase weight-bold">{{ page.title }}</h1>
+    <p>{{ page.date | date_to_long_string }}</p>
   </div>
+  <main class="container">
+    {{ content }}
+  </main>
 
   <!-- On inclus généralement les fichiers JS en bas du Body -->
   {% include footer.html %}
