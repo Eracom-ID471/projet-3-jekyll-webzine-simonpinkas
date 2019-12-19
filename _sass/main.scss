@@ -1,9 +1,9 @@
 $backgroundColor: #ffffff;
 $bodyColor: #343a40;
-$bodyFont: mauritius,
-serif;
-$headingFont: trumpgothicpro,
-sans-serif;
+$bodyFont: mauritius, serif;
+$headingFont: trumpgothicpro, sans-serif;
+
+$brandingColor: rgb(51, 51, 255);
 
 body {
   background: $backgroundColor;
@@ -20,15 +20,24 @@ h5 {
   font-weight: 600;
 }
 
-.blog-header {
-  border-bottom: 1px solid #e5e5e5;
+.selecteur-parent {
+  .selecteur-enfant {
+    .selecteur-petit-enfant {
 
+    }
+  }
+}
+
+.blog-header {
+  border-bottom: 1px solid blue;
   &-logo {
     font-family: $headingFont;
     font-weight: 600;
     text-transform: uppercase;
     font-size: 3rem;
-
+  }
+  &-subtitle {
+    font-size: .5rem;
   }
 }
 
@@ -74,7 +83,7 @@ nav {
   padding: 2.5rem 0;
   color: #999;
   text-align: center;
-  background-color: #f9f9f9;
+  background-color: $brandingColor;
   border-top: .05rem solid #e5e5e5;
 }
 

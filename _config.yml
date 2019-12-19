@@ -11,3 +11,6 @@ navigation:
     url: /sports.html
   - title: Culture
     url: /culture.html
+
+plugins:
+  - jekyll-minifier
